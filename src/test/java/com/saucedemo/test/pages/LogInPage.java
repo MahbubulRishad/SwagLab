@@ -38,4 +38,11 @@ public class LogInPage extends BaseTest {
         loginBtnEl.click();
         return new InventoryPage();
     }
+
+    public InventoryPage login(String userName, String password) {
+        fillUserName(userName);
+        fillPassword(password);
+        clickLogInBtn();
+        return new InventoryPage();
+    }
 }

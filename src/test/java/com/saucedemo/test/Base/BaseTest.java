@@ -1,5 +1,6 @@
 package com.saucedemo.test.Base;
 
+import com.saucedemo.test.util.General;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -55,7 +56,7 @@ public class BaseTest {
 //        link load and browser maximization
         driver.get(properties.getProperty("baseUrl"));
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(General.PAGE_LOAD));
     }
 
     public String getUserName(){

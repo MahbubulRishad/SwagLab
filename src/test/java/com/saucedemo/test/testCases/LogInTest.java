@@ -5,9 +5,7 @@ import com.saucedemo.test.pages.InventoryPage;
 import com.saucedemo.test.pages.LogInPage;
 import com.saucedemo.test.util.General;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class LogInTest extends BaseTest {
     LogInPage logInPage;
@@ -17,7 +15,7 @@ public class LogInTest extends BaseTest {
         super();
     }
 
-    @BeforeClass
+    @BeforeMethod
     public void init(){
         setUpBrowser();
     }
@@ -33,7 +31,7 @@ public class LogInTest extends BaseTest {
         Assert.assertTrue(inventoryPage.isDisplayedProductText());
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown(){
         General.domStable();
         driver.quit();

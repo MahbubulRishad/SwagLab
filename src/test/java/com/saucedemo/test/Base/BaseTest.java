@@ -65,4 +65,16 @@ public class BaseTest {
     public String getPassword(){
         return properties.getProperty("password");
     }
+
+    public String getFirstName(){
+        return properties.getProperty("firstName");
+    }
+
+    public String getLastName(){
+        return properties.getProperty("lastName");
+    }
+
+    public String getPostalCode(){
+        return properties.getProperty("postalCode");
+    }
 }

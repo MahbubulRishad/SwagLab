@@ -59,22 +59,23 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(General.PAGE_LOAD));
     }
 
-    public String getUserName(){
+    public String getUserName() {
         return properties.getProperty("userName");
     }
-    public String getPassword(){
+
+    public String getPassword() {
         return properties.getProperty("password");
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return properties.getProperty("firstName");
     }
 
-    public String getLastName(){
+    public String getLastName() {
         return properties.getProperty("lastName");
     }
 
-    public String getPostalCode(){
+    public String getPostalCode() {
         return properties.getProperty("postalCode");
     }
 }

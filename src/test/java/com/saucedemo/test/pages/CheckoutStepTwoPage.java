@@ -12,6 +12,11 @@ public class CheckoutStepTwoPage extends BaseTest {
     public CheckoutStepTwoPage(){
         PageFactory.initElements(driver, this);
     }
+    public CheckoutComplete clickFinishBtn(){
+        finishBtnEl.isDisplayed();
+        finishBtnEl.click();
+        return new CheckoutComplete();
+    }
     public boolean isDisplayedFinishBtn(){
         return finishBtnEl.isDisplayed();
     }

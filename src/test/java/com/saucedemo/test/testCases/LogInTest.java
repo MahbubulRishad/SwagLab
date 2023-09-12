@@ -21,6 +21,26 @@ public class LogInTest extends BaseTest {
     }
 
     @Test
+    public void logInShouldFailOnlyUserName(){
+        logInPage = new LogInPage();
+        logInPage
+                .fillUserName(getUserName())
+                .clickLogInBtn();
+
+        Assert.assertTrue(logInPage.hasErrorMessageDisplayed());
+    }
+
+    @Test
+    public void logInShouldFailOnlyPassword(){
+        logInPage = new LogInPage();
+        logInPage
+                .fillPassword(getPassword())
+                .clickLogInBtn();
+
+        Assert.assertTrue(logInPage.hasErrorMessageDisplayed());
+    }
+
+    @Test
     public void logInShouldSuccessful(){
         logInPage = new LogInPage();
         inventoryPage = logInPage

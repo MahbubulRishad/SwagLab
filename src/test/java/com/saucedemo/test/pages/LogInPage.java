@@ -15,6 +15,9 @@ public class LogInPage extends BaseTest {
     @FindBy(css = "#login-button")
     WebElement loginBtnEl;
 
+    @FindBy(css = "h3[data-test=\"error\"]")
+    WebElement loginFailErrorTextEl;
+
     public LogInPage() {
         PageFactory.initElements(driver, this);
     }
@@ -44,5 +47,15 @@ public class LogInPage extends BaseTest {
         fillPassword(password);
         clickLogInBtn();
         return new InventoryPage();
+    }
+
+    public LogInPage login(String userName){
+        fillUserName(userName);
+        clickLogInBtn();
+        return this;
+    }
+
+    public boolean hasErrorMessageDisplayed(){
+        return loginFailErrorTextEl.isDisplayed();
     }
 }
